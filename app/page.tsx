@@ -3,7 +3,9 @@ export const runtime = "edge";
 
 export default async function Home() {
   const res = await fetch(
-    process.env.BASE_URL || process.env.VERCEL_URL + "/api"
+    (process.env.BASE_URL == null
+      ? process.env.VERCEL_URL
+      : process.env.BASE_URL) + "/api"
   );
   if (res == null) {
     return <main></main>;
