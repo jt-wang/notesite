@@ -1,4 +1,5 @@
 import Image from "next/image";
+export const runtime = 'edge'
 
 export default async function Home() {
   const res = await fetch(process.env.BASE_URL + "/api");
