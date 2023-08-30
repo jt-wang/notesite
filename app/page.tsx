@@ -1,5 +1,6 @@
 import Image from "next/image";
 export const runtime = "edge";
+export const revalidate = 60;
 
 export default async function Home() {
   const res = await fetch(
